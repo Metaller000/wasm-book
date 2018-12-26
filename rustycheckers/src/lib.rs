@@ -1,5 +1,6 @@
 extern crate mut_static;
 
+// Imports
 extern "C" {
     fn notify_piecemoved(fromX: i32, fromY: i32,
                          toX: i32, toY: i32);
@@ -18,6 +19,7 @@ lazy_static! {
         { MutStatic::from(GameEngine::new()) };
 }
 
+// Export
 #[no_mangle]
 pub extern "C" fn move_piece(fx: i32, fy: i32, tx: i32, ty: i32) -> i32 {
     let mut engine = GAME_ENGINE.write().unwrap();
@@ -39,6 +41,7 @@ pub extern "C" fn move_piece(fx: i32, fy: i32, tx: i32, ty: i32) -> i32 {
     }
 }
 
+// Export
 #[no_mangle]
 pub extern "C" fn get_piece(x: i32, y: i32) -> i32 {
     let engine = GAME_ENGINE.read().unwrap();
@@ -51,6 +54,7 @@ pub extern "C" fn get_piece(x: i32, y: i32) -> i32 {
     }
 }
 
+// Export
 #[no_mangle]
 pub extern "C" fn get_current_turn() -> i32 {
     let engine = GAME_ENGINE.read().unwrap();
