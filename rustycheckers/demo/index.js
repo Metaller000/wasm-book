@@ -19,7 +19,6 @@ fetch('./rustycheckers.wasm').then(response =>
     }
   },
 }
-
 )).then(results => {
   instance = results.instance;
 
@@ -34,5 +33,4 @@ fetch('./rustycheckers.wasm').then(response =>
   let bad = instance.exports.move_piece(1, 4, 2, 3); // illegal move
   console.log("Illegal move result: " + bad);
   console.log("Turn after illegal move: " + instance.exports.get_current_turn());
-
 }).catch(console.error);
