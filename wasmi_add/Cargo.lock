@@ -1,0 +1,4 @@
+[[package]]
+name = "wasmi_add"
+version = "0.1.0"
+
