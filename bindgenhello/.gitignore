@@ -1,5 +1,6 @@
 target
 bindgenhello.js
 Cargo.lock
+package-lock.json
 *.ts
 *.wasm

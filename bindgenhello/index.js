@@ -1,3 +1,5 @@
-import { hello } from "./bindgenhello.js";
+const wasm = import('./bindgenhello');
 
-hello("World!");
+wasm
+    .then(h => h.hello("world!"))
+    .catch(console.error);
